@@ -24,6 +24,6 @@ def nbr_cluster(n):
     print('Score de Calinski Harabasz : ', calinski)
 
    
-print('Choississez le nombre de catégorie que vous souhaitez --> 2 = petit et grand ou 3 =petit moyen grand ', n )
+n = print('Choississez le nombre de catégorie que vous souhaitez --> 2 = petit et grand ou 3 =petit moyen grand ' )
 
 nbr_cluster(n)
