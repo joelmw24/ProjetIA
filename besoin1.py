@@ -11,7 +11,9 @@ import os
 
 
 def nbr_cluster(n): 
-    data = pd.read_csv("Data_Arbre.csv")
+    #dirname = os.path.dirname(__file__)
+    #filename = os.path.join(dirname, 'Data_Arbre.csv')
+    data = pd.read_csv('Data_Arbre.csv')
     colomns = ["haut_tot", "longitude", "latitude"]
     reduit = data[colomns].dropna()
     X = reduit[['haut_tot']].values
@@ -49,6 +51,24 @@ def nbr_cluster(n):
     anomalies = reduit[reduit['anomaly'] ==-1]
     nb_anomalies = np.count_nonzero(reduit['anomaly'] == -1)
     print("Nombre d'anomalies détéctées: ", nb_anomalies)
+    # Ajouter une trace pour les anomalies avec une légende
+    fig.add_trace(go.Scattermapbox(
+        lat=anomalies['latitude'],
+        lon=anomalies['longitude'],
+        mode='markers',
+        marker=go.scattermapbox.Marker(
+            size=10,
+            color='red'
+        ),
+        name='Anomalies' 
+    ))
+
+    fig.update_layout(
+        mapbox_style="open-street-map",
+        showlegend=True  # Permet d'afficher la légende
+    )
+    fig.update_layout(margin={"r":0, "t":0, "l":0, "b":0})
+    fig.show()
 
    
 n = int(input('Veuillez choisir un nombre de cluster : '))
