@@ -7,10 +7,11 @@ from sklearn.metrics import silhouette_score
 from sklearn.metrics import silhouette_score
 from sklearn.metrics import davies_bouldin_score
 from sklearn.metrics import calinski_harabasz_score
+import os
 
 
 def nbr_cluster(n): 
-    data = pd.read_csv("C:\\Users\\anais\\Downloads\\Data_Arbre.csv")
+    data = pd.read_csv("Data_Arbre.csv")
     colomns = ["haut_tot", "longitude", "latitude"]
     reduit = data[colomns].dropna()
     X = reduit[['haut_tot']].values
@@ -28,8 +29,8 @@ def nbr_cluster(n):
         reduit,
         lat = 'latitude',
         lon ='longitude',
-        #hover_name = 'haut_tot',
         color = 'cluster',
+        color_continuous_scale= 'plotly3',
         zoom = 12,
         height = 600, 
     )
