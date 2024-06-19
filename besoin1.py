@@ -8,6 +8,7 @@ from sklearn.metrics import silhouette_score
 from sklearn.metrics import davies_bouldin_score
 from sklearn.metrics import calinski_harabasz_score
 import os
+import plotly.graph_objects as go
 
 
 def nbr_cluster(n): 
@@ -60,6 +61,7 @@ def nbr_cluster(n):
             size=10,
             color='red'
         ),
+      
         name='Anomalies' 
     ))
 
