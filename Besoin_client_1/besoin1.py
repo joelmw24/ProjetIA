@@ -14,7 +14,7 @@ from sklearn.ensemble import IsolationForest
 def nbr_cluster(n): 
     #dirname = os.path.dirname(__file__)
     #filename = os.path.join(dirname, 'Data_Arbre.csv')
-    data = pd.read_csv('Data_Arbre.csv')
+    data = pd.read_csv('Besoin_client_1/Data_Arbre.csv')
     colomns = ["haut_tot", "longitude", "latitude"]
     reduit = data[colomns].dropna()
     X = reduit[['haut_tot']].values
