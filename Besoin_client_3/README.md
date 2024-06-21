@@ -1,5 +1,3 @@
-# Notebook Overview
-
 
 L'objectif principal de cette analyse est de comprendre l'impact des différentes variables sur le résultat. Nous allons examiner les données, effectuer des analyses statistiques et construire des modèles prédictifs pour tirer des conclusions significatives.
 
@@ -19,7 +17,7 @@ x_train_val, x_test, y_train_val, y_test = train_test_split(x, y, test_size=0.15
 x_train, x_val, y_train, y_val = train_test_split(x_train_val, y_train_val, test_size=0.25, random_state=42)
 ```
 
-## Apprentissage Supervisé pour la classification
+## Apprentissage Supervisé pour la classification exemple 
 
 ```python
 from sklearn.linear_model import SGDClassifier
